@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+
+    display: grid;
+    /* Recall that we have 3 columns and rosw in our target design. So each item stands for the columns. */
+    grid-template-areas: 
+    "header header header"
+    "navbar maincontent rightsidebar"
+    "navbar footer footer"
+    ;
+
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-rows: 70px 2fr 60px;
+
+}
+
+
+header,
+main,
+nav,
+aside,
+footer{
+    background-color: steelblue;
+    padding: 20px;
+    color: #fff;
+    border: skyblue 1px solid;
+
+}
+
+header{
+    grid-area: header;
+}
+main{
+    grid-area: maincontent;
+}
+nav{
+    grid-area: navbar;
+}
+aside{
+    grid-area: rightsidebar;
+}
+footer{
+    grid-area: footer;
+}
+/* Handling Responsiveness */
+
+@media(max-width:500px){
+
+    body{
+        grid-template-areas: 
+        "header"
+        "navbar"
+        "maincontent"
+        "rightsidebar"
+        "footer"
+        ;
+    
+        grid-template-columns:  1fr;
+        grid-template-rows: 70px 70px 1fr 120px 60px;
+    
+    }
+    
+}
